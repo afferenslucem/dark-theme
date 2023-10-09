@@ -1,12 +1,7 @@
-// Color names
-:root {
-}
+@import "styles/colors";
+@import "styles/fonts";
 
 // Styles
-
-html {
-  font-family: Arial;
-}
 
 * {
   margin: 0;
@@ -17,4 +12,43 @@ html {
 body {
   height: 100vh;
   width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--background-color);
+}
+
+.circle {
+  border-radius: 50%;
+  background: linear-gradient(40deg, var(--primary-color), var(--secondary-color) 70%);
+
+  &--big {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  &--hero {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.phone {
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 45rem;
+  width: 21rem;
+
+  border-radius: 2.5rem;
+
+  box-shadow: 0 4px 35px rgba(0,0,0,.1);
+  background-color: inherit;
 }
