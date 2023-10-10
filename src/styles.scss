@@ -52,7 +52,7 @@ body {
   height: 45rem;
   width: 21rem;
 
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 2.5rem;
 
   box-shadow: 0 4px 35px rgba(0,0,0,.1);
@@ -103,11 +103,25 @@ body {
 
     align-items: center;
   }
+
+  &__hidden-buttons {
+    position: absolute;
+
+    bottom: 0.5rem;
+    left: 25%;
+
+    width: 50%;
+    height: 0.25rem;
+
+    border-radius: 0.125rem;
+
+    background-color: black;
+
+    opacity: 0.4;
+  }
 }
 
 .content {
-  width: 80%;
-
   &__header {
     font-size: 1.4rem;
     font-weight: bolder;
@@ -116,6 +130,8 @@ body {
   }
 
   &__description {
+    width: 80%;
+
     font-size: 0.9rem;
 
     margin-top: 1.5rem;
@@ -124,11 +140,52 @@ body {
   }
 
   &__switcher {
-    width: 100%;
+    cursor: pointer;
+
+    width: 80%;
+
+    margin-top: 3rem;
+  }
+
+  &__carousel {
+    width: 1rem;
+    height: 0.25rem;
+
+    margin: 3rem auto;
+
+    border-radius: 0.125rem;
+
+    background-color: black;
+
+    position: relative;
+
+    &::before, &::after {
+      width: 0.25rem;
+      height: 0.25rem;
+
+      content: ' ';
+      background-color: black;
+
+      border-radius: 0.125rem;
+
+      opacity: 0.4;
+
+      position: absolute;
+    }
+
+    &::before {
+      left: -0.5rem;
+    }
+
+    &::after {
+      right: -0.5rem;
+    }
   }
 }
 
 .switcher {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
 
@@ -138,6 +195,85 @@ body {
   border-radius: 1.5rem;
 
   &__mode {
+    position: relative;
+
+    z-index: 1000;
+
     padding: 1rem 2.5rem;
+  }
+
+  &::before {
+    content: ' ';
+
+    position: absolute;
+
+    width: 50%;
+    height: 100%;
+
+    border-radius: 1.5rem;
+
+    background-color: var(--background-color);
+
+    z-index: 100;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+  }
+}
+
+.navigation {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 0.9rem;
+
+  &__skip {
+    opacity: 0.5;
+  }
+
+  &__arrow {
+    position: relative;
+
+    height: 3rem;
+    width: 3rem;
+
+    border-radius: 50%;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+
+    &::before {
+      position: absolute;
+
+      top: 50%;
+      left: calc(50% + 0.125rem);
+
+      transform: translate(-75%, -50%);
+
+      border-top: 2px solid black;
+
+      width: 1rem;
+
+      content: ' ';
+    }
+
+    &::after {
+      position: absolute;
+
+      top: 50%;
+      left: calc(50% + 0.25rem);
+
+      transform: translate(-75%, -50%) rotate(135deg);
+
+      border-top: 2px solid black;
+      border-left: 2px solid black;
+
+      width: 0.5rem;
+      height: 0.5rem;
+
+      content: ' ';
+    }
   }
 }

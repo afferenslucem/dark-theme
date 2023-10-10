@@ -4,4 +4,18 @@
 
   --background-color: #fff;
   --background-color-secondary: rgba(0, 0, 0, 0.1);
+
+  --toggle-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #8983F7;
+    --secondary-color: #A3DAFB;
+  
+    --background-color: #26242E;;
+    --background-color-secondary: #34323D;
+  
+    --toggle-color: #fff;
+  }
 }
